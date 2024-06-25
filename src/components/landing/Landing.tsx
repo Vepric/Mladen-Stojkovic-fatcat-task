@@ -1,8 +1,7 @@
+/* global __CWD__ */
+import { Card } from '@homework-task/components/landing/Card';
 import clsx from 'clsx';
 
-import { Card } from './Card.jsx';
-
-// eslint-disable-next-line no-undef
 const vscodeProjectLink = `vscode://file/${__CWD__}`;
 
 const cards = [
@@ -28,7 +27,7 @@ const cards = [
     },
 ];
 
-export const Landing = () => {
+export const Landing: React.FC = () => {
     return (
         <section
             className={clsx(
