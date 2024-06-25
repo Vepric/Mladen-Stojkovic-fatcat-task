@@ -1,13 +1,12 @@
+import { Landing } from '@homework-task/components/landing/Landing';
 import './styles.css';
 
-import { Landing } from './components/landing/Landing.jsx';
-
-function App() {
+const App: React.FC = () => {
     return (
         <main>
             <Landing />
         </main>
     );
-}
+};
 
 export default App;

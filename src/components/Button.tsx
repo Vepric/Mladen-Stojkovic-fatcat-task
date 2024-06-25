@@ -1,6 +1,17 @@
 import clsx from 'clsx';
+import { ReactNode } from 'react';
 
-export const Button = ({ children, onClick, className }) => {
+interface ButtonProps {
+    children: ReactNode;
+    onClick: () => void;
+    className?: String;
+}
+
+export const Button: React.FC<ButtonProps> = ({
+    children,
+    onClick,
+    className,
+}) => {
     return (
         <button
             className={clsx(
