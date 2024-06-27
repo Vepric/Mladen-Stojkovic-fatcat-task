@@ -1,4 +1,6 @@
-import { fetchUsers, useFetchUsers } from '@homework-task/hooks/useFetchUsers'; // Assuming the type 'UseQueryResult' is exported from 'useFetchUsers'
+import clsx from 'clsx';
+import { User } from '@homework-task/components/User';
+import { useFetchUsers } from '@homework-task/hooks/useFetchUsers';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -18,17 +20,20 @@ export const UsersList = () => {
     ) : status === 'error' ? (
         <div>{error.message}</div>
     ) : (
-        <div className="flex flex-col gap-2">
+        <div className={clsx('flex', 'flex-col', 'gap-2')}>
             {data.pages.map((page) => (
-                <div className="flex flex-col gap-2" key={page.currentPage}>
+                <div
+                    className={clsx('flex', 'flex-col', 'gap-2')}
+                    key={page.currentPage}
+                >
                     {page.data.map((user) => (
-                        <div key={user.id} className="p-4 bg-gray60 rounded">
-                            {user.name}
-                        </div>
+                        <User key={user.id} {...user}></User>
                     ))}
                 </div>
             ))}
-            <div ref={ref}>{isFetchingNextPage && 'Loading...'}</div>
+            <div className={clsx('h-2')} ref={ref}>
+                {isFetchingNextPage && 'Loading...'}
+            </div>
         </div>
     );
 };

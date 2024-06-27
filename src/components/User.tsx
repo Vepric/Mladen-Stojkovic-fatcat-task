@@ -1,8 +1,9 @@
 import { IUser } from '@homework-task/models';
+import clsx from 'clsx';
 
 export const User: React.FC<IUser> = ({ id, name, username, email, phone }) => {
     return (
-        <div>
+        <div className={clsx('p-4', 'bg-gray60', 'rounded')}>
             <p>ID: {id}</p>
             <p>Name: {name}</p>
             <p>Username: {username}</p>
