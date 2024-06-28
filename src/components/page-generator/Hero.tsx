@@ -1,9 +1,9 @@
-export interface HeroProps {
+export interface IHeroProps {
     title: string;
     image: string;
 }
 
-export const Hero: React.FC<HeroProps> = ({ title, image }) => {
+export const Hero: React.FC<IHeroProps> = ({ title, image }) => {
     return (
         <div className="flex row justify-center items-center gap-4 h-screen">
             <div className="w-4/12">

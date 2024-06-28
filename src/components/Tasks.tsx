@@ -1,9 +1,10 @@
-import CreateForm from '@homework-task/components/CreateForm';
+import CreateForm from '@homework-task/components/create-form/CreateForm';
+import { FORM_SCHEMA } from '@homework-task/components/formSchema';
 import Input from '@homework-task/components/Input';
-import PageGenerator from '@homework-task/components/PageGenerator';
+import { PageGenerator } from '@homework-task/components/page-generator/PageGenerator';
+import { PAGE_GENERATOR_DATA } from '@homework-task/components/page-generator/pageGeneratorData';
 import TextArea from '@homework-task/components/TextArea';
-import { UsersList } from '@homework-task/components/UsersList';
-import { FORM_SCHEMA, PAGE_GENERATOR } from '@homework-task/constants';
+import { UsersList } from '@homework-task/components/users-list/UsersList';
 
 export const Tasks: React.FC = () => (
     <div className="flex flex-col gap-4 p-8 sm:p-16 bg-cream">
@@ -32,6 +33,6 @@ export const Tasks: React.FC = () => (
                 </>
             )}
         />
-        <PageGenerator data={PAGE_GENERATOR} />
+        <PageGenerator data={PAGE_GENERATOR_DATA} />
     </div>
 );

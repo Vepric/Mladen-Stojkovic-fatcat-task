@@ -7,10 +7,8 @@ const config = {
         browser: true,
         es2020: true,
     },
-    languageOptions: {
-        globals: {
-            __CWD__: 'readonly',
-        },
+    globals: {
+        __CWD__: 'readonly',
     },
     extends: [
         'eslint:recommended',
@@ -18,7 +16,6 @@ const config = {
         'plugin:react/jsx-runtime',
         'plugin:react-hooks/recommended',
         'plugin:@typescript-eslint/recommended',
-        'eslint:recommended',
         'plugin:import/recommended',
         'plugin:prettier/recommended',
         'prettier',
@@ -27,7 +24,10 @@ const config = {
     settings: {
         react: { version: '18.2' },
         'import/resolver': {
-            typescript: {},
+            typescript: {
+                alwaysTryTypes: true,
+                project: path.join(__dirname, 'tsconfig.json'),
+            },
         },
     },
     parser: '@typescript-eslint/parser',

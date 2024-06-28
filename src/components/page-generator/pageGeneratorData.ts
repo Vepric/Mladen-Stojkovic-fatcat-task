@@ -1,6 +1,6 @@
-import { ISectionProps } from '@homework-task/models';
+import { ISectionProps } from '@homework-task/components/page-generator/IPageGenerator';
 
-export const PAGE_GENERATOR: ISectionProps[] = [
+export const PAGE_GENERATOR_DATA: ISectionProps[] = [
     {
         type: 'layoutSection',
         props: {

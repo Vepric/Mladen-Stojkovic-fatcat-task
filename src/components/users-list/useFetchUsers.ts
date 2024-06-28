@@ -1,6 +1,7 @@
-import { IUser } from '@homework-task/models';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import axios from 'axios';
+
+import { IUser } from '@homework-task/components/users-list/IUser';
 
 interface IFetchUserParams {
     pageParam: number;
@@ -18,7 +19,7 @@ const fetchUsers = async ({
     limit,
 }: IFetchUserParams): Promise<IPagination<IUser>> => {
     try {
-        const response = await axios.get(
+        const response = await axios.get<IUser[]>(
             `https://jsonplaceholder.typicode.com/users`,
             {
                 params: {
@@ -28,7 +29,10 @@ const fetchUsers = async ({
             }
         );
 
-        const totalUsers = parseInt(response.headers['x-total-count'], 10);
+        const totalUsers = parseInt(
+            (response?.headers['x-total-count'] as string) ?? '0',
+            10
+        );
 
         return {
             data: response.data,
