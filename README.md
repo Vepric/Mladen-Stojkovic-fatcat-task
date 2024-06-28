@@ -1,6 +1,7 @@
 ## Project setup and start
 
 It's the usual, old: 
+0. git checkout main
 1. npm install 
 2. npm run dev 
 
