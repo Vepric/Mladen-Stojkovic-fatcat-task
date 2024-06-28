@@ -34,8 +34,9 @@ Well... pretty much because of this little guy ---> 'import/no-relative-parent-i
 This rule has pretty much forced me last minute to reorganize 
 the whole project folder structure. (I should've ran the lint command way earlier, so that's on me).
 
-I was originally developing the folder structure in this format 
+#I was originally developing the folder structure in this format 
 
+## src/
 src/
 │
 ├── components/
