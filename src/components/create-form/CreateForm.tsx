@@ -1,3 +1,5 @@
+import { SyntheticEvent } from 'react';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
     useForm,
@@ -17,6 +19,19 @@ interface CreateFormProps {
         errors: FieldErrors<ICreatePostFormInputs>;
     }) => React.ReactNode;
     successMessage: string;
+}
+
+//NOTE(Mladen): This function is used to handle promises in event handlers.
+//              This is by all means a hack. I was using it to solve one of the most annoying lint issues:
+//              "Promise-returning function provided to attribute where a void return was expected"
+function onPromise<T>(promise: (event: SyntheticEvent) => Promise<T>) {
+    return (event: SyntheticEvent) => {
+        if (promise) {
+            promise(event).catch((error) => {
+                return error as Error;
+            });
+        }
+    };
 }
 
 const CreateForm: React.FC<CreateFormProps> = ({
@@ -47,7 +62,7 @@ const CreateForm: React.FC<CreateFormProps> = ({
     return (
         <form
             className="w-3/4 justify-center flex flex-col gap-4 self-center"
-            onSubmit={void handleSubmit(onSubmit)}
+            onSubmit={onPromise(handleSubmit(onSubmit))}
         >
             {renderForm({ register, errors })}
             <button
