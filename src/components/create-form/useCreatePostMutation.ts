@@ -1,10 +1,20 @@
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
-import { ICreatePostFormInputs } from '@homework-task/models';
 
-const createPost = async (data: ICreatePostFormInputs) => {
+import { ICreatePostFormInputs } from '@homework-task/components/create-form/ICreatePostFormInputs';
+
+interface IPostResponse {
+    id: number;
+    title: string;
+    body: string;
+    userId?: number;
+}
+
+const createPost = async (
+    data: ICreatePostFormInputs
+): Promise<IPostResponse> => {
     try {
-        const response = await axios.post(
+        const response = await axios.post<IPostResponse>(
             'https://jsonplaceholder.typicode.com/posts',
             data
         );
@@ -19,7 +29,5 @@ const createPost = async (data: ICreatePostFormInputs) => {
 export const useCreatePostMutation = () => {
     return useMutation({
         mutationFn: createPost,
-        onError: (error) =>
-            console.error('Error creating post:', error.message),
     });
 };

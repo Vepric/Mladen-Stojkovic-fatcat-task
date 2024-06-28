@@ -1,5 +1,6 @@
-import { IUser } from '@homework-task/models';
 import clsx from 'clsx';
+
+import { IUser } from '@homework-task/components/users-list/IUser';
 
 export const User: React.FC<IUser> = ({ id, name, username, email, phone }) => {
     return (

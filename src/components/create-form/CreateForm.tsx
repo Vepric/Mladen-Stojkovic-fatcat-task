@@ -1,4 +1,4 @@
-import React from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
     useForm,
     SubmitHandler,
@@ -6,9 +6,9 @@ import {
     UseFormRegister,
 } from 'react-hook-form';
 import { ZodSchema } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useCreatePostMutation } from '../hooks/useCreatePostMutation';
-import { ICreatePostFormInputs } from '@homework-task/models';
+
+import { ICreatePostFormInputs } from '@homework-task/components/create-form/ICreatePostFormInputs';
+import { useCreatePostMutation } from '@homework-task/components/create-form/useCreatePostMutation';
 
 interface CreateFormProps {
     validationSchema: ZodSchema<ICreatePostFormInputs>;
@@ -47,7 +47,7 @@ const CreateForm: React.FC<CreateFormProps> = ({
     return (
         <form
             className="w-3/4 justify-center flex flex-col gap-4 self-center"
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={void handleSubmit(onSubmit)}
         >
             {renderForm({ register, errors })}
             <button

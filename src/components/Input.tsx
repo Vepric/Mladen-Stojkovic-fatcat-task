@@ -1,9 +1,10 @@
 import clsx from 'clsx';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
 interface InputProps {
     id: string;
     label: string;
-    register: any;
+    register: UseFormRegisterReturn<string>;
     error?: boolean;
     helperText?: string;
 }

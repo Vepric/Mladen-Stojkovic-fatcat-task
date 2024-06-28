@@ -1,10 +1,10 @@
 import Marquee from 'react-fast-marquee';
 
-interface TrustBarProps {
+export interface ITrustBarProps {
     images: string[];
 }
 
-export const TrustBar: React.FC<TrustBarProps> = ({ images }) => {
+export const TrustBar: React.FC<ITrustBarProps> = ({ images }) => {
     return (
         <Marquee>
             {images.map((image) => (

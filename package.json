@@ -10,9 +10,15 @@
     "scripts": {
         "dev": "vite --port 3000",
         "build": "vite build",
-        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
         "typecheck": "tsc --noEmit",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "prepare": "husky install"
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js,jsx}": [
+            "eslint --fix"
+        ]
     },
     "dependencies": {
         "@hookform/resolvers": "^3.6.0",
@@ -35,17 +41,20 @@
         "autoprefixer": "^10.4.16",
         "eslint": "^8.53.0",
         "eslint-config-prettier": "^9.0.0",
-        "eslint-plugin-import": "^2.29.0",
+        "eslint-import-resolver-typescript": "^3.6.1",
+        "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-jsx-a11y": "^6.8.0",
         "eslint-plugin-prettier": "^5.0.1",
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.4",
         "eslint-plugin-unused-imports": "^3.0.0",
+        "husky": "^8.0.0",
+        "lint-staged": "^15.2.7",
         "postcss": "^8.4.31",
         "prettier": "^3.1.0",
         "tailwindcss": "^3.3.5",
-        "typescript": "^5.5.2",
+        "typescript": "^5.3.2",
         "vite": "^5.0.0"
     }
 }

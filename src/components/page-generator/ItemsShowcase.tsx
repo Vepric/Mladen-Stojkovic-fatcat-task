@@ -1,15 +1,15 @@
 import React from 'react';
 
-interface Item {
+interface IItem {
     title: string;
     description: string;
 }
 
-interface ItemsShowcaseProps {
-    items: Item[];
+export interface IItemsShowcaseProps {
+    items: IItem[];
 }
 
-export const ItemsShowcase: React.FC<ItemsShowcaseProps> = ({ items }) => {
+export const ItemsShowcase: React.FC<IItemsShowcaseProps> = ({ items }) => {
     return (
         <div className="flex justify-center items-center">
             <div className="grid grid-cols-2 gap-8 w-8/12">

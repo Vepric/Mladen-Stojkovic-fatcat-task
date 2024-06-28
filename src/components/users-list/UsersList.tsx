@@ -1,8 +1,10 @@
-import clsx from 'clsx';
-import { User } from '@homework-task/components/User';
 import { useEffect } from 'react';
+
+import clsx from 'clsx';
 import { useInView } from 'react-intersection-observer';
-import { useFetchUsers } from '@homework-task/hooks';
+
+import { useFetchUsers } from '@homework-task/components/users-list/useFetchUsers';
+import { User } from '@homework-task/components/users-list/User';
 
 export const UsersList = () => {
     const { ref, inView } = useInView();
@@ -11,7 +13,7 @@ export const UsersList = () => {
 
     useEffect(() => {
         if (inView) {
-            fetchNextPage();
+            void fetchNextPage();
         }
     }, [inView, fetchNextPage]);
 
