@@ -16,8 +16,9 @@
         "prepare": "husky install"
     },
     "lint-staged": {
-        "*.{ts,tsx,js,jsx}": [
-            "eslint --fix"
+        "*.{ts,tsx}": [
+            "eslint --fix",
+            "tsc --noEmit"
         ]
     },
     "dependencies": {
