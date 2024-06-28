@@ -34,22 +34,27 @@ Well... pretty much because of this little guy ---> 'import/no-relative-parent-i
 This rule has pretty much forced me last minute to reorganize 
 the whole project folder structure. (I should've ran the lint command way earlier, so that's on me).
 
-I was originally developing the folder structure in this format 
+#I was originally developing the folder structure in this format 
 
+## src/
 src/
-    components/
-        atoms/
-            index.ts
-        molecules/
-            index.ts
-        organisms/
-            index.ts
-    constants/ 
-        index.ts
-    hooks/
-        index.ts
-    models/
-        index.ts
+│
+├── components/
+│   ├── atoms/
+│   │   └── index.ts
+│   ├── molecules/
+│   │   └── index.ts
+│   └── organisms/
+│       └── index.ts
+│
+├── constants/
+│   └── index.ts
+│
+├── hooks/
+│   └── index.ts
+│
+└── models/
+    └── index.ts
 
 This structure along with @homework-task alias looked nice, but I wanted to comply with the rules 
 and didn't have enough time to potentialy split the project into multiple packages or create a 
