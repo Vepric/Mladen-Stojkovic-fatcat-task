@@ -28,8 +28,7 @@ Alongside regular components, I added the option for a user to pass html compone
 ### One elephant in the room
 
 Why does the folder structure look so hectic and bunched up?
-Well... I really dislike
-this rule ---> 'import/no-relative-parent-imports': 'error' 
+Well... pretty much because of this little guy ---> 'import/no-relative-parent-imports': 'error' 
 
 This rule has pretty much forced me last minute to reorganize 
 the whole project folder structure. (I should've ran the lint command way earlier, so that's on me).
@@ -57,3 +56,4 @@ monorepo out of it.
 
 At the end of the day, all types, pre-commit hook and linting checks are passing.
 
+### Thank you for reading and have a nice day!
