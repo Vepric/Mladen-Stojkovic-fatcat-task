@@ -55,5 +55,5 @@ This structure along with @homework-task alias looked nice, but I wanted to comp
 and didn't have enough time to potentialy split the project into multiple packages or create a 
 monorepo out of it. 
 
-At the end of the day, all types, pre commit hook and linting checks are passing.
+At the end of the day, all types, pre-commit hook and linting checks are passing.
 
