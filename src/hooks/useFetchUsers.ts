@@ -42,7 +42,7 @@ const fetchUsers = async ({
     }
 };
 
-export const useFetchUsers = (limit = 3, onError: (error: Error) => void) => {
+export const useFetchUsers = (limit = 3) => {
     return useInfiniteQuery({
         queryKey: ['users'],
         queryFn: ({ pageParam = 1 }) => fetchUsers({ pageParam, limit }),
